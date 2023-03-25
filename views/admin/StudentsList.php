@@ -66,7 +66,7 @@ include 'Model/StudentsQuery.php';
                                 <th>Kelas</th>
                                 <th>No. Tlp</th>
                                 <th>Tahun Ajaran</th>
-                                <th>Riwayat Transaksi</th>
+                                <th class="text-center">Riwayat Transaksi</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>

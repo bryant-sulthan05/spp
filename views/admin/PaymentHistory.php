@@ -74,7 +74,7 @@ endif;
                                                             $months = $con->query("SELECT * FROM months WHERE month_id <= '$b'");
                                                         }
                                                         foreach ($months as $m) :
-                                                            $StudentTransactions = $con->query("SELECT * FROM transactions JOIN spp USING (spp_id) WHERE month_id = '$m[month_id]' AND student_id = '$rowStudent[student_id]' AND thn_bayar = '$year'");
+                                                            $StudentTransactions = $con->query("SELECT * FROM transactions JOIN spp USING (spp_id) WHERE month_id = '$m[month_id]' AND student_id = '$rowStudent[student_id]' AND spp.tahun_ajaran = '$year'");
                                                             $month = mysqli_fetch_assoc($StudentTransactions);
                                                     ?>
                                                             <tr>
