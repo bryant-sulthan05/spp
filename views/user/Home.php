@@ -1,14 +1,7 @@
 <?php
 $title = 'Pembayaran SPP berbasis web';
 include 'views/layout/meta.php';
-
-$ProfileSiswa = $con->query("SELECT * FROM students WHERE student_id = '$_SESSION[student_id]'");
-$s = mysqli_fetch_assoc($ProfileSiswa);
-
-$Bulan = $con->query("SELECT * FROM months");
-$b = mysqli_fetch_assoc($Bulan);
-$Tagihan = $con->query("SELECT * FROM months WHERE month_id NOT IN (SELECT month_id FROM transactions WHERE month_id = '$b[month_id]' AND spp_id = '$s[spp_id]' AND student_id = '$s[student_id]')");
-$hitungTagihan = mysqli_num_rows($Tagihan);
+include 'Model/Home.php';
 ?>
 <style>
     body {
@@ -105,7 +98,7 @@ $hitungTagihan = mysqli_num_rows($Tagihan);
                             <div class="d-flex justify-content-between">
                                 <span class="bi bi-receipt rounded-circle p-2" style="background-color: #ff8080; color:#ce0000;"></span>
                                 <span class="fw-bold me-auto ms-4 mt-1" style="color: #001220;">Tagihan</span>
-                                <span class="fw-bold text-center mb-2" style="background-color: #ff8080; color: #ce0000; text-decoration: none; width: 20px; border-radius: 100%;">2</span>
+                                <span class="fw-bold text-center mb-2" style="background-color: #ff8080; color: #ce0000; text-decoration: none; width: 20px; border-radius: 100%;"><?= $hitungTagihan ?></span>
                             </div>
                         </div>
                     </a>

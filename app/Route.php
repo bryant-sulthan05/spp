@@ -39,6 +39,9 @@ switch ($pages) {
     case 'home';
         include 'views/user/Home.php';
         break;
+    case 'histori_pembayaran';
+        include 'views/user/RiwayatTransaksi.php';
+        break;
     default:
         include 'views/components/LogUser.php';
 }
