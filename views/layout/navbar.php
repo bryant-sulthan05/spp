@@ -4,7 +4,7 @@ if (!isset($_SESSION['siswa'])) :
     header("Location: index.php");
 endif;
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color: #fff; box-shadow: 0 0 5px #001220;">
     <div class="container">
         <a class="navbar-brand" href="index.php?page=home">SPP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@ endif;
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="index.php?page=home">Home</a>
                 <a class="nav-link" href="index.php?page=histori_pembayaran">History Pembayaran</a>
-                <a class="nav-link px-3 btn btn-danger" href="index.php?page=sign_out">Sign out</a>
+                <a class="nav-link px-3 btn fw-bold" style="background-color: #ffca0d; color: #001220;" href="index.php?page=sign_out">Sign out</a>
             </div>
         </div>
     </div>

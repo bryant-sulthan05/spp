@@ -1,6 +1,8 @@
 <?php
-if (isset($_SESSION['admin']) || isset($_SESSION['siswa'])) :
+if (isset($_SESSION['admin'])) :
     header("Location: index.php?page=dashboard");
+elseif (isset($_SESSION['siswa'])) :
+    header("Location: index.php?page=home");
 else :
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
