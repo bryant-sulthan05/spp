@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2023 at 02:21 AM
+-- Generation Time: Mar 26, 2023 at 07:44 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,7 +44,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `firstname`, `lastname`, `email`, `password`, `pass`, `tlp`, `address`, `photo`) VALUES
-(1, 'Bryant', 'Sulthan Nugroho', 'bryant@gmail.com', 'bf14c9e2dbc935acede43ed20eda3585', 'bryant1234', 2147483647, 'Jl. Gunung Putra', NULL);
+(1, 'Bryant', 'Sulthan Nugroho', 'bryant@gmail.com', '202cb962ac59075b964b07152d234b70', '123', 2147483647, 'Jl. Gunung Putra', NULL);
 
 -- --------------------------------------------------------
 
@@ -169,7 +169,7 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`student_id`, `classroom_id`, `major_id`, `spp_id`, `nis`, `firstname`, `lastname`, `username`, `password`, `pass`, `email`, `tlp`, `address`, `photo`) VALUES
 (1, 3, 1, 3, 130788144, 'Refansa', 'Ali Muzky', 'refansa', '4d0707acfec91608f07ca3d238cb4aca', 'refansa', NULL, NULL, NULL, NULL),
 (2, 3, 3, 3, 119916637, 'Fardan', 'Septian', 'fardan', 'f7ca6d6f004154a11ef559e41ba30f12', 'fardan', NULL, NULL, NULL, NULL),
-(3, 3, 1, 3, 118882603, 'Adi', 'Saputra', 'adi123', '7360409d967a24b667afc33a8384ec9e', 'adi123', NULL, NULL, NULL, NULL),
+(3, 3, 1, 3, 118882603, 'Adi', 'Saputra', 'adi123', '7360409d967a24b667afc33a8384ec9e', 'adi123', 'adisaputra@gmail.com', 828218638, 'Griya Bukit Jaya', 'b.jpg'),
 (4, 3, 2, 3, 103948432, 'Doni', 'Irawan', 'doni', '2da9cd653f63c010b6d6c5a5ad73fe32', 'doni', NULL, NULL, NULL, NULL),
 (6, 3, 1, 3, 182275538, 'Firenze', 'Higa Putra', 'firenze501', '8746fe9eebab4773138c31d7a43099b0', 'firenze501', NULL, NULL, NULL, NULL),
 (7, 3, 1, 3, 132006725, 'Adi', 'Putra', 'adi14469', '915d4952828ef373c823f9b5d5a28397', 'adi14469', NULL, NULL, NULL, NULL),
@@ -178,7 +178,8 @@ INSERT INTO `students` (`student_id`, `classroom_id`, `major_id`, `spp_id`, `nis
 (10, 3, 3, 3, 131958665, 'Aufa', 'Ramadhan', 'aufa1822', '9e5e923d30978bc6b16e31b4b6bc2272', 'aufa1822', NULL, NULL, NULL, NULL),
 (11, 3, 2, 3, 163295454, 'Rehan', 'Hakim', 'rehan7797', '76d86e7a8e6f7349a70c54a2051ffd0b', 'rehan7797', NULL, NULL, NULL, NULL),
 (12, 3, 1, 3, 195442586, 'Dimas', 'Abidin', 'dimas14703', 'a2b8041715c80e20f0490265421a677b', 'dimas14703', NULL, NULL, NULL, NULL),
-(13, 3, 2, 3, 137657739, 'Bagus', 'Sekali', 'bagus5865', '5031492a1657331b6d51e718aee5f8be', 'bagus5865', NULL, NULL, NULL, NULL);
+(13, 3, 2, 3, 137657739, 'Bagus', 'Sekali', 'bagus5865', '5031492a1657331b6d51e718aee5f8be', 'bagus5865', NULL, NULL, NULL, NULL),
+(14, 3, 3, 3, 177290220, 'Wildan', 'Ahmad Fadilah', 'wildan5789', '87c1a9453c58ef8b743d48dadf2ef061', 'wildan5789', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -195,6 +196,7 @@ CREATE TABLE `transactions` (
   `tgl_bayar` date NOT NULL,
   `thn_bayar` year(4) NOT NULL,
   `total` int(11) NOT NULL,
+  `status` varchar(50) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -202,12 +204,19 @@ CREATE TABLE `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`transaction_id`, `admin_id`, `student_id`, `spp_id`, `month_id`, `tgl_bayar`, `thn_bayar`, `total`, `created_at`) VALUES
-(3, 1, 1, 3, 1, '2023-03-13', 2023, 250000, '2023-03-19 02:40:49'),
-(4, 1, 3, 3, 1, '2023-03-15', 2023, 250000, '2023-03-19 03:30:51'),
-(5, 1, 8, 3, 1, '2023-03-19', 2023, 250000, '2023-03-19 03:02:41'),
-(6, 1, 6, 3, 1, '2023-03-19', 2023, 250000, '2023-03-19 03:04:25'),
-(7, 1, 3, 3, 2, '2023-03-19', 2023, 250000, '2023-03-19 03:30:36');
+INSERT INTO `transactions` (`transaction_id`, `admin_id`, `student_id`, `spp_id`, `month_id`, `tgl_bayar`, `thn_bayar`, `total`, `status`, `created_at`) VALUES
+(3, 1, 1, 3, 1, '2023-03-13', 2023, 250000, 'lunas', '2023-03-26 05:36:50'),
+(4, 1, 3, 3, 1, '2023-03-15', 2023, 250000, 'lunas', '2023-03-23 03:49:01'),
+(5, 1, 8, 3, 1, '2023-03-19', 2023, 250000, 'lunas', '2023-03-23 03:49:04'),
+(6, 1, 6, 3, 1, '2023-03-19', 2023, 250000, 'lunas', '2023-03-23 03:49:08'),
+(7, 1, 3, 3, 2, '2023-03-19', 2023, 250000, 'lunas', '2023-03-23 03:49:10'),
+(8, 1, 3, 3, 3, '2023-03-23', 2023, 250000, 'lunas', '2023-03-23 03:55:51'),
+(9, 1, 7, 3, 1, '2023-03-23', 2023, 250000, 'lunas', '2023-03-23 06:05:54'),
+(11, 1, 9, 3, 1, '2023-03-23', 2023, 250000, 'lunas', '2023-03-23 05:33:49'),
+(12, 1, 12, 3, 1, '2023-03-23', 2023, 250000, 'lunas', '2023-03-23 05:36:12'),
+(13, 1, 10, 3, 1, '2023-03-23', 2023, 250000, 'lunas', '2023-03-23 06:17:14'),
+(14, 1, 2, 3, 1, '2023-03-25', 2023, 250000, 'lunas', '2023-03-25 01:29:20'),
+(15, 1, 3, 2, 1, '2023-03-25', 2023, 300000, 'lunas', '2023-03-25 02:25:23');
 
 --
 -- Indexes for dumped tables
@@ -309,13 +318,13 @@ ALTER TABLE `spp`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

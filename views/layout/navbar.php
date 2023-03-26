@@ -18,6 +18,7 @@ endif;
             border-bottom: #ffca0d solid;
             margin-right: 5px;
             margin-left: 5px;
+            font-weight: bold;
         }
 
         .navbar-nav .nav-link:hover {
