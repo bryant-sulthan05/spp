@@ -11,9 +11,6 @@ switch ($pages) {
     case 'laporan_transaksi':
         include 'views/admin/TransactionsReport.php';
         break;
-    case 'profile':
-        include 'views/admin/Profile.php';
-        break;
     case 'register';
         include 'views/components/Register.php';
         break;
@@ -29,9 +26,9 @@ switch ($pages) {
     case "bayar";
         include 'views/admin/Transaction.php';
         break;
-    case "XII_rpl";
-        include 'views/admin/StudentsofClass.php';
-        break;
+        // case "XII_rpl";
+        //     include 'views/admin/StudentsofClass.php';
+        //     break;
     case 'login':
         include 'views/components/Login.php';
         break;
@@ -41,6 +38,12 @@ switch ($pages) {
         break;
     case 'histori_pembayaran';
         include 'views/user/RiwayatTransaksi.php';
+        break;
+    case 'tagihan';
+        include 'views/user/Tagihan.php';
+        break;
+    case 'profile';
+        include 'views/user/Profile.php';
         break;
     default:
         include 'views/components/LogUser.php';

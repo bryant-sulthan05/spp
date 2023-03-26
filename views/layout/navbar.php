@@ -37,7 +37,7 @@ endif;
                 <a class="nav-link <?= $pages == 'home' ? 'active' : '' ?>" href="index.php?page=home">Home</a>
                 <a class="nav-link <?= $pages == 'histori_pembayaran' ? 'active' : '' ?>" href="index.php?page=histori_pembayaran">History Pembayaran</a>
                 <a class="nav-link <?= $pages == 'tagihan' ? 'active' : '' ?>" href="index.php?page=tagihan">Tagihan</a>
-                <a class="nav-link px-3 btn fw-bold" style="background-color: #ffca0d; color: #001220;" href="index.php?page=sign_out">Sign out</a>
+                <a class="nav-link px-3 btn fw-bold ms-2" style="background-color: #ffca0d; color: #001220;" href="index.php?page=sign_out">Sign out</a>
             </div>
         </div>
     </div>
