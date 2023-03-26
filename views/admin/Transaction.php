@@ -20,6 +20,14 @@ include 'Model/Transaction.php';
                 <div class="row justify-content-center mt-3">
                     <div class="col-md-6">
                         <a href="index.php?page=daftar_siswa" class="btn fw-bold mb-3" style="background-color: #ffca0d; color:#212529;"><span class="bi bi-backspace">&nbsp;Kembali</span></a>
+                        <?php if (isset($_COOKIE['transaksi']) == 'sudah_ada') { ?>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span class="alert alert-danger">Transaksi sudah ada</span>
+                                </div>
+                            </div>
+                        <?php unset($_COOKIE['transaksi']);
+                        } ?>
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="card">
                                 <div class="card-body">
